@@ -1,0 +1,9 @@
+ROUTINE Exercício1
+Exercício1
+	Read !,"Digite o Valor de X: ", X
+	Read !,"Digite o Valor de Y: ", Y
+	Write !
+	Set J=0
+	For I=X:1:Y If '(I#2) Set J=J+1 Write !,I
+	;Teste
+	;Teste2
