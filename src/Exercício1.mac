@@ -7,3 +7,4 @@ Exercício1
 	For I=X:1:Y If '(I#2) Set J=J+1 Write !,I
 	;Teste
 	;Teste2
+	#; teste 3
