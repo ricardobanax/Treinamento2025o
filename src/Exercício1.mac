@@ -2,9 +2,8 @@ ROUTINE Exercício1
 Exercício1
 	Read !,"Digite o Valor de X: ", X
 	Read !,"Digite o Valor de Y: ", Y
+	Set (Z,J)=0
 	Write !
-	Set J=0
-	For I=X:1:Y If '(I#2) Set J=J+1 Write !,I
-	;Teste
-	;Teste2
-	#; teste 3
+	For I=X:1:Y Write:'(I#2) !,I Set:'(I#10) Z=Z+1 Set:(I#2) J=J+1
+	Write !!,"Quantidade de Números Divisíveis por 10: "_Z
+	Write !!,"Quantidade de Números Ímpares: "_J

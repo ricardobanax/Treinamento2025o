@@ -1,0 +1,19 @@
+ROUTINE Exercício3
+Exercício3
+	Read !,"Digite o Primeiro Número: ", N1
+	Read !,"Digite o Segundo Número: ", N2
+	Read !,"Digite o Terceiro Número: ", N3
+	;4.1
+	Set QTDE=0
+	For I=N1:1:N2 If (I#11)=5 Write !,I_" é resto 5" Set QTDE=QTDE+1
+	;4.2
+	Set MULT=0
+	For I=N2:1:N3 If '(I#3) Write !,I_" é múltiplo de 3" Set MULT=MULT+1
+	;4.3
+	Set SOMA=0
+	For I=N1:1:N2 Set SOMA=SOMA+I
+	;Display
+	Write !!,"Quantidade de Números resto 5: "_QTDE
+	Write !,"Quantidade de Números múltiplos de 3: "_MULT
+	Write !,"Soma de N1 a N2: "_SOMA
+	
