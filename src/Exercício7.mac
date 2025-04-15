@@ -1,0 +1,5 @@
+ROUTINE Exercício7
+Exercício7 ;
+    Read !,"Digite seu nome completo: ",nome
+    Write !,$LENGTH(nome)
+    Write !,$Replace(nome," ","/")

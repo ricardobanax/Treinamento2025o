@@ -1,0 +1,11 @@
+ROUTINE Exercício5
+Exercício5 ;
+    Read !,"Informe a Quantidade de Cadastros: ", quantidade
+    For X=1:1:quantidade {
+        Read !!,"Digite a Matrícula do Aluno: ", matricula
+        Read !,"Digite o Nome do Aluno: ", nome
+        Read !,"Digite o Telefone: ", telefone
+        Set ^tAluno(X,"nome")=nome
+        Set ^tAluno(X,"matricula")=matricula
+        Set ^tAluno(X,"telefone")=telefone
+    }
