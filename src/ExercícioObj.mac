@@ -1,29 +1,49 @@
 ROUTINE ExercícioObj
-ExercícioObj ;
-    kill ^Treinamento.Data.CursoD
-    Set curso = ##class(Treinamento.Data.Curso).%New()
-    Set curso.Nome = "OBJScript"
-    Set curso.Duracao = 40
-    Set curso.Preço = 1.500
-    Set status = curso.%Save()
-    ;
-    kill ^Treinamento.Data.InstrutorD
-    Set Instrutor = ##class(Treinamento.Data.Instrutor).%New()
-    Set Instrutor.Nome = "Anderson Soares"
-    Set Instrutor.Matricula = "123456"
-    Set status = Instrutor.%Save()
-    ;
-    kill ^Treinamento.Data.AlunoD
-    for i=1:1:3 {
-        Set Aluno = ##class(Treinamento.Data.Aluno).%New()
-        Set Aluno.Nome = "Aluno "_i
-        Set Aluno.Matricula = (100+(i*10))
-        Set Aluno.Idade = (i*20)
-        Set status = Aluno.%Save()
-    }
-    ;
-    kill ^Treinamento.Data.TurmaD
-    Set Turma = ##class(Treinamento.Data.Turma).%New()
-    Set Turma.DataInicio = ""
-    Set Turma.Status = "Incompleta"
-    Set status = Turma.%Save()
+ExercicioObj 
+
+  Kill ^Treinamento.Data.CursoD
+  Kill ^Treinamento.Data.InstrutorD
+  Kill ^Treinamento.Data.AlunoD
+  Kill ^Treinamento.Data.TurmaD
+
+ Set curso = ##class(Treinamento.Data.Curso).%New()
+ Set curso.Nome = "OBJScript"
+ Set curso.Duracao = 40
+ Set curso.Preço = 1.500
+ Set status = curso.%Save()
+ 
+ 
+ Set instrutor = ##class(Treinamento.Data.Instrutor).%New()
+ Set instrutor.Nome = "Anderson Soares"
+ Set instrutor.Matricula = "1981" 
+ Set status = instrutor.%Save()
+
+
+ Set aluno1 = ##class(Treinamento.Data.Aluno).%New()
+ Set aluno1.Nome = "Anderson Soares"
+ Set aluno1.Matricula = "1981"
+ Set aluno1.Idade = 40
+ Set status = aluno1.%Save()
+
+ Set aluno2 = ##class(Treinamento.Data.Aluno).%New()
+ Set aluno2.Nome = "Felipe Ziareski "
+ Set aluno2.Matricula = "1981"
+ Set aluno2.Idade = 15
+ Set status = aluno2.%Save()
+
+ Set aluno3 = ##class(Treinamento.Data.Aluno).%New()
+ Set aluno3.Nome = "Suzana Ziareski "
+ Set aluno3.Matricula = "1981"
+ Set aluno3.Idade = 45
+ Set status = aluno3.%Save()
+
+ 
+ Set turma = ##class(Treinamento.Data.Turma).%New()
+ Set turma.DataInicio = ""
+ Set turma.Status = "Imcompleto"
+ Set turma.Curso = curso
+ Set turma.Instrutor = instrutor
+ Do turma.Alunos.Insert(aluno1)
+ Do turma.Alunos.Insert(aluno2)
+ Do turma.Alunos.Insert(aluno3)
+ Set status = turma.%Save()
